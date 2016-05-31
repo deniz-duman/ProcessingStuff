@@ -34,8 +34,8 @@ class Ball {
   }
   
   void bounce(){
-    if (x+rad == 0 || x+rad == 600) dx = -dx;
-    if (y+rad == 0 || y+rad == 600) dy = -dy;
+    if (x == 0 || x == 600) dx = -dx;
+    if (y == 0 || y == 600) dy = -dy;
   }
 
   void move() {
