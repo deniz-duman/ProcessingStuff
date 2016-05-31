@@ -40,6 +40,17 @@ class Ball {
     bounce();
   }
  
+  void grow(){
+    rad+=0.1;
+  }
+  
+  void shrink(){
+    rad-=0.1;
+  }
+  
+  void die(){
+    rad=0;
+  }
  
  boolean isTouching( Ball other ) {
     if (Math.sqrt(Math.pow(x-other.x,2)+Math.(y-other.y,2)) <= rad + other.rad) return true;
