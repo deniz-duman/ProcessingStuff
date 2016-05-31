@@ -42,7 +42,11 @@ class Ball {
  
  
  boolean isTouching( Ball other ) {
- 
+    if ((x + rad == other.x + other.rad) && (y + rad == other.y + other.rad)) return true;
+    if ((x + rad == other.x + other.rad) && (y + rad == other.y - other.rad)) return true;
+    if ((x + rad == other.x - other.rad) && (y + rad == other.y + other.rad)) return true;
+    if ((x + rad == other.x - other.rad) && (y + rad == other.y - other.rad)) return true;
+    return false;
  }
  
   
