@@ -33,6 +33,9 @@ class Ball {
     state = MOVING;
   }
   
+  void bounce(){
+    
+  }
 
   void move() {
     x = x + dx;
