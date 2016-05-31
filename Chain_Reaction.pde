@@ -15,14 +15,26 @@ void setup() {
 
 void draw() {
   background(0);
-
-
-  for (int i=0; i < balls.length; i++ ) {
-    
+  if (reactionStarted){
+    while (balls[0].state != DEAD){
+      if (rad < 60)){
+        balls[0].state = GROWING;
+      }
+      else if (rad > 0){
+        balls[0].state = SHRINKING;
+      }
+      else {
+        balls[0].state = DEAD;
+      }
+      balls[0].draw();
+      for (int i=1; i < balls.length; i++ ) {
+        if (balls[0].isTouching(balls[i])){
+          balls[i].draw();
+        }
+      }
+    }
   }
-
   for (int i=0; i < balls.length; i++ ) {
-    balls[i].draw();
     balls[i].process();
   }
 }
