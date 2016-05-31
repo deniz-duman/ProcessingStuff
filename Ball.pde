@@ -37,6 +37,17 @@ class Ball {
     if (x == 0 || x == 600) dx = -dx;
     if (y == 0 || y == 600) dy = -dy;
   }
+  
+  void process(){
+    move();
+    draw();
+  }
+  
+  void draw(){
+    if (state == GROWING) grow();
+    else if (state == SHRINKING) shrink();
+    else if (state == DEAD) die();
+  }
 
   void move() {
     x = x + dx;
